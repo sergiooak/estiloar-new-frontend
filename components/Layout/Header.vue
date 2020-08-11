@@ -1,0 +1,21 @@
+<template>
+  <header>
+    <div class="container mx-auto">
+      <div>
+        logo
+      </div>
+      <div>
+        <header>
+          phones
+          <ul>
+            <li>1</li>
+            <li>2</li>
+          </ul>
+        </header>
+        <nav>
+          menu
+        </nav>
+      </div>
+    </div>
+  </header>
+</template>
