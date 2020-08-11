@@ -1,6 +1,5 @@
 export const actions = {
-    nuxtServerInit({ dispatch }, { req }) {
-      dispatch("config/refresh")
-    }
-  };
-  
+  nuxtServerInit({ dispatch }, { req }) {
+    // dispatch("config/refresh");
+  }
+};
