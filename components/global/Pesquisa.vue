@@ -6,7 +6,7 @@
           v-model="query"
           @keyup="search"
           type="text"
-          placeholder="placeholder"
+          :placeholder="placeholder"
           class="w-full h-full px-4"
         />
         <input type="submit" value="buscar" class="h-full" />
