@@ -6,6 +6,7 @@
           v-model="query"
           @keyup="search"
           type="text"
+          placeholder="placeholder"
           class="w-full h-full px-4"
         />
         <input type="submit" value="buscar" class="h-full" />
@@ -50,6 +51,7 @@ export default {
   components: {
     CollapseTransition
   },
+  props: ["placeholder"],
   data() {
     return {
       query: "",
