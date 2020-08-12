@@ -4,8 +4,8 @@
       id="sliderHome"
       animation="fade"
       height="352px"
-      stopOnHover="true"
-      interval="3500"
+      :stopOnHover="true"
+      :interval="3500"
       indicators="left"
     >
       <slider-item v-for="(i, index) in data" :key="index" :style="i">

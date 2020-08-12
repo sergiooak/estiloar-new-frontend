@@ -1,15 +1,19 @@
 <template>
   <div class="relative w-full h-full">
     <div class="h-full border-2 rounded border-estilo">
-      <form @submit.prevent="go" class="flex w-full h-full">
+      <form @submit.prevent="search" class="flex w-full h-full">
         <input
           v-model="query"
-          @keyup="search"
+          @keyup="quickSearch"
           type="text"
           :placeholder="placeholder"
           class="w-full h-full px-4"
         />
-        <input type="submit" value="buscar" class="h-full" />
+        <input
+          type="submit"
+          value="buscar"
+          class="h-full px-4 font-medium text-white uppercase transition-colors duration-150 rounded-none cursor-pointer bg-estilo hover:bg-gray-800"
+        />
       </form>
     </div>
     <collapse-transition>
@@ -59,18 +63,19 @@ export default {
     };
   },
   methods: {
-    go() {
-      console.log("go to selected peça");
+    search() {
+      this.$router.push("/catalogo/pesquisa", { query: { query: this.query } });
     },
-    async search() {
+    async quickSearch() {
       let q = this.query;
-
       let res = await this.$strapi.find("pecas", {
         _limit: 6,
         super_contains: q
       });
-      if (this.query.length > 0) {
-        this.resultados = res;
+      if (q.length > 0) {
+        if (q == this.query) {
+          this.resultados = res;
+        }
       } else {
         this.resultados = [];
       }
