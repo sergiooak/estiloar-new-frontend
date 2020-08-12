@@ -1,5 +1,6 @@
 <template>
   <div
+    id="BarraPesquisa"
     class="relative flex w-5/6 p-4 mx-auto -mt-8 bg-white border-2 rounded-lg shadow-xl border-estilo"
   >
     <div class="flex items-center w-2/5">
@@ -16,3 +17,9 @@ export default {
   props: ["data"]
 };
 </script>
+
+<style>
+  #BarraPesquisa{
+    z-index: 99;
+  }
+</style>
