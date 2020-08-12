@@ -1,7 +1,7 @@
 <template>
   <div id="main-wrapper">
     <Header />
-    <Nuxt class="flex-1 bg-gray-200" />
+    <Nuxt class="flex-1 bg-gray-200" keep-alive />
     <Footer />
   </div>
 </template>

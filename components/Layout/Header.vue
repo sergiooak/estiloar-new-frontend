@@ -104,20 +104,25 @@ export default {
   name: "Header",
   data() {
     return {
-      unidades: []
+      unidades: [],
+      config: {}
     };
   },
-  computed: {
-    config() {
-      return this.$store.state.config;
-    }
+  async fetch() {
+    this.config = await this.$strapi.find('global-config')
+    this.unidades = await this.$strapi.find('unidades')
   },
-  created() {
-    this.$store.dispatch("config/refresh");
-    this.$strapi.find("unidades").then(res => {
-      this.unidades = res;
-    });
-  }
+  // computed: {
+  //   config() {
+  //     return this.$store.state.config;
+  //   }
+  // },
+  // created() {
+  //   this.$store.dispatch("config/refresh");
+  //   this.$strapi.find("unidades").then(res => {
+  //     this.unidades = res;
+  //   });
+  // }
 };
 </script>
 
