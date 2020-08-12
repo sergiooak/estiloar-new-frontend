@@ -1,7 +1,7 @@
 <template>
   <header
     class="relative overflow-hidden bg-white shadow-lg"
-    style="z-index: +1"
+    style="z-index: 99"
   >
     <div class="container flex justify-between mx-auto">
       <div class="w-1/6">
