@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <Slider />
+      <Slider :data="config.slider" />
     </section>
     <section class="container mx-auto">
       <BarraPesquisa :data="config.search_bar" />
