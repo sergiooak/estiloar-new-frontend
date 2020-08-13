@@ -19,6 +19,7 @@
     "vue2-transitions": "^0.3.0"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^2.1.0"
+    "@nuxtjs/tailwindcss": "^2.1.0",
+    "@tailwindcss/custom-forms": "^0.2.1"
   }
 }
