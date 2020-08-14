@@ -1,7 +1,7 @@
 <template>
   <header
     class="relative overflow-hidden bg-white shadow-lg"
-    style="z-index: 99"
+    style="z-index: 99;"
   >
     <div class="container flex justify-between mx-auto">
       <div class="w-1/6">
@@ -10,7 +10,7 @@
             width="213"
             height="35"
             :src="
-              'https://res.cloudinary.com/estilo-ar/image/upload/c_pad,dpr_3.0,h_100,w_213/' +
+              'https://res.cloudinary.com/estilo-ar/image/upload/c_pad,h_100,w_213/f_auto/' +
                 config.logo.hash
             "
             :alt="config.logo.alternativeText"
@@ -137,5 +137,9 @@ export default {
   width: 640px;
   left: 100%;
   @apply absolute h-10 bg-gray-800 top-0;
+}
+
+header{
+  height: 100px;
 }
 </style>

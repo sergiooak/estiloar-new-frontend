@@ -32,7 +32,7 @@
               width="64px"
               height="64px"
               :src="
-                'https://res.cloudinary.com/estilo-ar/image/upload/c_thumb,h_64,w_64/dpr_3.0/' +
+                'https://res.cloudinary.com/estilo-ar/image/upload/c_thumb,h_64,w_64/f_auto/' +
                   resultado.imagens[0].hash
               "
             />

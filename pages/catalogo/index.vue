@@ -6,28 +6,36 @@
           <Aside @params="update" />
         </aside>
         <div class="w-3/4 px-2">
-          <div class="relative content">
+          <div class="relative p-2 -m-2 content">
             <fade-transition>
               <div v-show="loading" class="absolute inset-0 loading">
-                <Spinner />
+                <div>
+                  <Spinner />
+                </div>
               </div>
             </fade-transition>
             <header class="flex justify-between">
-              <Contador :nessa_pagina="paramsObj._limit" :total="total" />
-              <Paginacao @mudaPage="mudaPage" :page="page" :last_page="Math.ceil(total / 12)" />
+              <Contador :nessa_pagina="12" :total="total" />
+              <Paginacao
+                @mudaPage="mudaPage"
+                :page="page"
+                :last_page="Math.ceil(total / 12)"
+              />
             </header>
 
             <main class="flex flex-wrap mt-4 -mr-2">
               <div v-for="item in items" :key="item.id" class="w-1/3 px-2 mb-4">
-                <div class="p-4 bg-white rounded-lg shadow-md">
-                  {{ item.codigo }}
-                </div>
+                <Peca :peca="item" />
               </div>
             </main>
 
             <footer class="flex justify-between">
-              <Contador :nessa_pagina="paramsObj._limit" :total="total" />
-              <Paginacao @mudaPage="mudaPage" :page="page" :last_page="Math.ceil(total / 12)" />
+              <Contador :nessa_pagina="12" :total="total" />
+              <Paginacao
+                @mudaPage="mudaPage"
+                :page="page"
+                :last_page="Math.ceil(total / 12)"
+              />
             </footer>
           </div>
         </div>
@@ -71,7 +79,7 @@ export default {
       this.params = params;
     },
     async getPecas() {
-      // this.loading = true;
+      this.loading = true;
 
       let q = this.paramsObj;
       let res = await this.$strapi.find("pecas", q);
@@ -102,9 +110,15 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .loading {
+  @apply flex justify-center bg-gray-200 bg-opacity-50;
+  z-index: +1;
   backdrop-filter: blur(1.5px);
-  @apply flex items-center justify-center bg-gray-200 bg-opacity-50;
+
+  & > div{
+    @apply flex items-center;
+    max-height: 80vh;
+  }
 }
 </style>
